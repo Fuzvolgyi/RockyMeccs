@@ -36,20 +36,26 @@ public class RockyMeccs {
         Rocky.setNev("Rocky");
         
         
-        
+        Bokszolo Ken = new Bokszolo();
+        Ken.setNev("Ken");
+              
         
         
     
         // meccs
-        while (eronlet1 > 0 || eronlet2 > 0) {
+        do {
+        
             
             
             
             
-        }
-   
-
-
+            mecsSzamlalo++;
+            Ken.setUtesekSzama(mecsSzamlalo);
+        } while (Rocky.getEronletiPont() > 0 || Ken.getEronletiPont() > 0);
+        
+        
+        
+        
 
 
 
