@@ -63,15 +63,15 @@ public class Bokszolo {
         return ero = rd.nextInt(10);
     }
             
-    public int kenKülönlegesEro(int utesEro, int utesekSzama){
-        int eredmeny;
-        Random rd = new Random();
-        int esely = rd.nextInt(100)/20;
-        if ((utesekSzama % == 0) && (utesEro < 5) && (esely > 20)) {
-            return eredmeny = 1;
-        }
-        return eredmeny = 0;
-    }
+//    public int kenKülönlegesEro(int utesEro, int utesekSzama){
+//        int eredmeny;
+//        Random rd = new Random();
+//        int esely = rd.nextInt(100)/20;
+//        if ((utesekSzama % == 0) && (utesEro < 5) && (esely > 20)) {
+//            return eredmeny = 1;
+//        }
+//        return eredmeny = 0;
+//    }
     
 }
 
