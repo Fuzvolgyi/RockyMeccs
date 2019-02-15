@@ -28,49 +28,73 @@ public class RockyMeccs {
 
     
     public static void main(String[] args) {
-        int mecsSzamlalo = 0;
-        
-        
-        
+        int mecsSzamlalo = 1;
+        int rockyEletero20Alatt = 0;
+               
         Bokszolo Rocky = new Bokszolo();
         Rocky.setNev("Rocky");
         
-        
         Bokszolo Ken = new Bokszolo();
         Ken.setNev("Ken");
-              
-        
-        
     
-        // meccs
-        do {
-        
+        while (Rocky.getEronletiPont() > 0 && Ken.getEronletiPont() > 0) { 
+            System.out.println("");
+            System.out.println("Induljon a " + mecsSzamlalo + ". menet!");
+            Rocky.setSzerencse();
+            int rockySzerencse = Rocky.getSzerencse();
+            Ken.setSzerencse();
+            int kenSzerencse = Ken.getSzerencse();
+            Rocky.setUtesErosseg();
+            Ken.setUtesErosseg();
+            if (Rocky.getEronletiPont() < 20) {
+                rockyEletero20Alatt++;
+            }
             
+            if (rockySzerencse > kenSzerencse) {
+                Ken.setEronletiPont(Ken.getEronletiPont() - Rocky.getUtesErosseg());
+                System.out.println("Rocky " + utesFajta(Rocky.getUtesErosseg()));
+                if (Ken.getEronletiPont() <= 0) {
+                    continue;
+                }
+                Rocky.setEronletiPont(Rocky.getEronletiPont() - Ken.getUtesErosseg());
+                System.out.println("Ken " + utesFajta(Ken.getUtesErosseg()));
+            } else {
+                Rocky.setEronletiPont(Rocky.getEronletiPont() - Ken.getUtesErosseg());
+                System.out.println("Ken " + utesFajta(Ken.getUtesErosseg()));
+                if (Rocky.getEronletiPont() <= 0) {
+                    continue;
+                }
+                Ken.setEronletiPont(Ken.getEronletiPont() - Rocky.getUtesErosseg());
+                System.out.println("Rocky " + utesFajta(Rocky.getUtesErosseg()));
+            }
             
-            
+            System.out.println("Rocky erőnléte: " + Rocky.getEronletiPont());
+            System.out.println("Ken erőnléte: " + Ken.getEronletiPont());
             
             mecsSzamlalo++;
             Ken.setUtesekSzama(mecsSzamlalo);
-        } while (Rocky.getEronletiPont() > 0 || Ken.getEronletiPont() > 0);
+                
+        }
         
+        String eredmeny;
+        eredmeny = gyoztes(Rocky.getEronletiPont(), Ken.getEronletiPont());
+        System.out.println("A mecs győztese " + " a " + mecsSzamlalo 
+                + ". menetben " + eredmeny + " !");
         
-        
-        
-
-
-
     }
     
-    public String gyoztes(int eronlet1, int eronlet2){
-        if (eronlet1 < 0 || eronlet2 < 0) {
-            return eronlet1 < eronlet2 ? "Rocky" : "Ken";
+    
+    
+    public static String gyoztes(int eronlet1, int eronlet2){
+        if (eronlet1 <= 0 || eronlet2 <= 0) {
+            return eronlet1 < eronlet2 ? "Ken" : "Rocky" ;
         }
     return "";
     }
     
-    public void utesSorrend(){
-        
-    
+    public static String utesFajta(int utesErosseg){
+        return (utesErosseg % 2 == 0) ? "bal horgot vitt be!" 
+                : "bal horgot vitt be!";   
     }
     
 }
