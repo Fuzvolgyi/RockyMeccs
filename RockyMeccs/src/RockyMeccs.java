@@ -46,6 +46,7 @@ public class RockyMeccs {
             int kenSzerencse = Ken.getSzerencse();
             Rocky.setUtesErosseg();
             Ken.setUtesErosseg();
+            
             if (Rocky.getEronletiPont() < 20) {
                 rockyEletero20Alatt++;
             }
@@ -53,24 +54,35 @@ public class RockyMeccs {
             if (rockySzerencse > kenSzerencse) {
                 Ken.setEronletiPont(Ken.getEronletiPont() - Rocky.getUtesErosseg());
                 System.out.println("Rocky " + utesFajta(Rocky.getUtesErosseg()));
+                
                 if (Ken.getEronletiPont() <= 0) {
+                    foldreKerult(Ken.getNev());
                     continue;
                 }
+                eronletKiir(Ken.getNev(), Ken.getEronletiPont());
                 Rocky.setEronletiPont(Rocky.getEronletiPont() - Ken.getUtesErosseg());
                 System.out.println("Ken " + utesFajta(Ken.getUtesErosseg()));
+                if (Rocky.getEronletiPont() <= 0) {
+                    foldreKerult(Rocky.getNev());
+                    continue;
+                }
+                eronletKiir(Rocky.getNev(), Rocky.getEronletiPont());
             } else {
                 Rocky.setEronletiPont(Rocky.getEronletiPont() - Ken.getUtesErosseg());
                 System.out.println("Ken " + utesFajta(Ken.getUtesErosseg()));
                 if (Rocky.getEronletiPont() <= 0) {
+                    foldreKerult(Rocky.getNev());
                     continue;
                 }
+                eronletKiir(Rocky.getNev(), Rocky.getEronletiPont());
                 Ken.setEronletiPont(Ken.getEronletiPont() - Rocky.getUtesErosseg());
                 System.out.println("Rocky " + utesFajta(Rocky.getUtesErosseg()));
+                if (Ken.getEronletiPont() <= 0) {
+                    foldreKerult(Ken.getNev());
+                    continue;
+                }
+                eronletKiir(Ken.getNev(), Ken.getEronletiPont());
             }
-            
-            System.out.println("Rocky erőnléte: " + Rocky.getEronletiPont());
-            System.out.println("Ken erőnléte: " + Ken.getEronletiPont());
-            
             mecsSzamlalo++;
             Ken.setUtesekSzama(mecsSzamlalo);
                 
@@ -96,5 +108,12 @@ public class RockyMeccs {
         return (utesErosseg % 2 == 0) ? "bal horgot vitt be!" 
                 : "bal horgot vitt be!";   
     }
-    
+ 
+    public static void eronletKiir(String nev, int eronlet){
+        System.out.println(nev + " erőnléte " + eronlet);
+    }
+
+    private static void foldreKerult(String nev) {
+        System.out.println(nev + " a földre került!");
+    }
 }

@@ -67,7 +67,7 @@ public class Bokszolo {
     public int utesEro(){
         int ero;
         Random rd = new Random();
-        return ero = rd.nextInt(10);
+        return ero = rd.nextInt(11)+1;
     }
     
     public boolean kenKülönlegesEro(int utesEro, int utesekSzama){
@@ -81,5 +81,5 @@ public class Bokszolo {
         int esely = rd.nextInt(100);
         return eletero < 20 && esely <= 30 && valtozo < 1;
     }
-    
+   
 }
