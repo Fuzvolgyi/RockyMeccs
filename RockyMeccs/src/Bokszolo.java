@@ -6,6 +6,16 @@ import java.util.Random;
  * @author FZs
  */
 public class Bokszolo {
+    
+    public Bokszolo(){
+    }
+    
+    public Bokszolo(String nev){
+        this.setNev(nev);
+               
+    }
+    
+    
     private String nev;
     private int utesErosseg;
     private int eronletiPont = 100;

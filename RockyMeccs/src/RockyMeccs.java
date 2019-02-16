@@ -31,15 +31,12 @@ public class RockyMeccs {
         int mecsSzamlalo = 1;
         int rockyEletero20Alatt = 0;
                
-        Bokszolo Rocky = new Bokszolo();
-        Rocky.setNev("Rocky");
+        Bokszolo Rocky = new Bokszolo("Rocky");
         
-        Bokszolo Ken = new Bokszolo();
-        Ken.setNev("Ken");
+        Bokszolo Ken = new Bokszolo("Ken");
     
         while (Rocky.getEronletiPont() > 0 && Ken.getEronletiPont() > 0) { 
-            System.out.println("");
-            System.out.println("Induljon a " + mecsSzamlalo + ". menet!");
+            System.out.println("\n" + "Induljon a " + mecsSzamlalo + ". menet!");
             Rocky.setSzerencse();
             int rockySzerencse = Rocky.getSzerencse();
             Ken.setSzerencse();
