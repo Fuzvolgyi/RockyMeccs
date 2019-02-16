@@ -15,6 +15,7 @@ public class Bokszolo {
                
     }
     
+    public static final Random RANDOM = new Random();
     
     private String nev;
     private int utesErosseg;
@@ -43,8 +44,7 @@ public class Bokszolo {
     }
     
     public void setUtesErosseg() {
-        Random rd = new Random();
-        int ero = rd.nextInt(10)+1;
+        int ero = RANDOM.nextInt(10)+1;
         this.utesErosseg = ero;
     }
     
@@ -72,8 +72,7 @@ public class Bokszolo {
     }
 
     public void setSzerencse() {
-        Random rd = new Random();
-        int esely = rd.nextInt(1000);
+        int esely = RANDOM.nextInt(1000);
         this.szerencse = esely; 
     } 
     
@@ -82,19 +81,16 @@ public class Bokszolo {
 
     public int utesEro(){
         int ero;
-        Random rd = new Random();
-        return ero = rd.nextInt(11)+1;
+        return ero = RANDOM.nextInt(11)+1;
     }
     
     public boolean kenKülönlegesEro(int utesEro, int utesekSzama){
-        Random rd = new Random();
-        int esely = rd.nextInt(100);
+        int esely = RANDOM.nextInt(100);
         return utesekSzama % 2 == 0 && utesEro < 5 && esely <= 20;
     }
     
     public boolean rockyKülönlegesEro (int eletero, int valtozo){
-        Random rd = new Random();
-        int esely = rd.nextInt(100);
+        int esely = RANDOM.nextInt(100);
         return eletero < 20 && esely <= 30 && valtozo < 1;
     }
    
