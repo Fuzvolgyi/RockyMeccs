@@ -24,7 +24,8 @@ public class Bokszolo {
 
     @Override
     public String toString() {
-        return "Bokszolo{" + "nev=" + nev + ", utesErosseg=" + utesErosseg + ", eronletiPont=" + eronletiPont + '}';
+        return "Bokszolo{" + "nev=" + nev + ", utesErosseg=" + utesErosseg 
+                + ", eronletiPont=" + eronletiPont + '}';
     }
 
     
@@ -45,6 +46,10 @@ public class Bokszolo {
         Random rd = new Random();
         int ero = rd.nextInt(10)+1;
         this.utesErosseg = ero;
+    }
+    
+    public void setUtesErosseg(int utesEro, int valtozas){
+        this.utesErosseg = utesEro + valtozas;
     }
     
     public int getEronletiPont() {

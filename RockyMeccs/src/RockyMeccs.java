@@ -42,10 +42,14 @@ public class RockyMeccs {
             int kenSzerencse = Ken.getSzerencse();
             Rocky.setUtesErosseg();
             Ken.setUtesErosseg();
-
-            if (Rocky.getEronletiPont() < 20) {
-                rockyEletero20Alatt++;
+            
+            if (Ken.kenKülönlegesEro(Ken.getUtesErosseg(), mecsSzamlalo - 1)) {
+                Ken.setUtesErosseg(Ken.getUtesErosseg(), 1);
+                System.out.println("Ken felhasználta a különleges képeségét.");
+                System.out.println("Ken erőnléte: " + Ken.getEronletiPont() 
+                        + " -ra változott");
             }
+            
 
             if (rockySzerencse > kenSzerencse) {
                 Ken.setEronletiPont(Ken.getEronletiPont() - Rocky.getUtesErosseg());
@@ -56,6 +60,7 @@ public class RockyMeccs {
                     continue;
                 }
                 eronletKiir(Ken.getNev(), Ken.getEronletiPont());
+                
                 Rocky.setEronletiPont(Rocky.getEronletiPont() - Ken.getUtesErosseg());
                 System.out.println("Ken " + utesFajta(Ken.getUtesErosseg()));
                 if (Rocky.getEronletiPont() <= 0) {
