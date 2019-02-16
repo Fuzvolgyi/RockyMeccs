@@ -46,8 +46,6 @@ public class RockyMeccs {
             if (Ken.kenKülönlegesEro(Ken.getUtesErosseg(), mecsSzamlalo - 1)) {
                 Ken.setUtesErosseg(Ken.getUtesErosseg(), 1);
                 System.out.println("Ken felhasználta a különleges képeségét.");
-                System.out.println("Ken erőnléte: " + Ken.getEronletiPont() 
-                        + " -ra változott");
             }
             
 
