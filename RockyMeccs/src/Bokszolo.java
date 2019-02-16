@@ -26,6 +26,7 @@ public class Bokszolo {
     public String toString() {
         return "Bokszolo{" + "nev=" + nev + ", utesErosseg=" + utesErosseg + ", eronletiPont=" + eronletiPont + '}';
     }
+
     
     //<editor-fold defaultstate="collapsed" desc="Getterek, Setterek">
     public String getNev() {
@@ -83,7 +84,7 @@ public class Bokszolo {
     public boolean kenKülönlegesEro(int utesEro, int utesekSzama){
         Random rd = new Random();
         int esely = rd.nextInt(100);
-        return utesekSzama % 2 == 0 && utesEro < 5 && esely > 20;
+        return utesekSzama % 2 == 0 && utesEro < 5 && esely <= 20;
     }
     
     public boolean rockyKülönlegesEro (int eletero, int valtozo){
