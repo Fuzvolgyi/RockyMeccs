@@ -44,7 +44,7 @@ public class RockyMeccs {
             Ken.setUtesErosseg();
             
             if (Ken.kenKülönlegesEro(Ken.getUtesErosseg(), mecsSzamlalo - 1)) {
-                Ken.setUtesErosseg(Ken.getUtesErosseg(), 1);
+                Ken.ujUtesErosseg(Ken.getUtesErosseg(), 1);
                 System.out.println("Ken felhasználta a különleges képeségét.");
             }
             
