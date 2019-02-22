@@ -48,9 +48,7 @@ public class Bokszolo {
         this.utesErosseg = ero;
     }
     
-    public void setUtesErosseg(int utesEro, int valtozas){
-        this.utesErosseg = utesEro + valtozas;
-    }
+    
     
     public int getEronletiPont() {
         return eronletiPont;
@@ -89,9 +87,13 @@ public class Bokszolo {
         return utesekSzama % 2 == 0 && utesEro < 5 && esely <= 20;
     }
     
+    public void ujUtesErosseg(int utesEro, int valtozas){
+        this.utesErosseg = utesEro + valtozas;
+    }
+    
     public boolean rockyKülönlegesEro (int eletero, int valtozo){
         int esely = RANDOM.nextInt(100);
-        return eletero < 20 && esely <= 30 && valtozo < 1;
+        return eletero > 0 && eletero < 20 && esely <= 29 && valtozo < 1;
     }
    
 }
