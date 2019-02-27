@@ -6,36 +6,32 @@ import java.util.Random;
  * @author FZs
  */
 public class Bokszolo {
-    
-    public Bokszolo(){
-    }
-    
-    public Bokszolo(String nev){
-        this.setNev(nev);
-               
-    }
-    
     public static final Random RANDOM = new Random();
     
     private String nev;
     private int utesErosseg;
     private int eronletiPont = 100;
-    private int utesekSzama = 0;
     private int szerencse;
+
+    
+    public Bokszolo(String nev) {
+        this.nev = nev;
+        this.setUtesErosseg();
+        this.setSzerencse();
+    }
 
     @Override
     public String toString() {
-        return "Bokszolo{" + "nev=" + nev + ", utesErosseg=" + utesErosseg 
-                + ", eronletiPont=" + eronletiPont + '}';
+        return "Bokszolo{" + "nev=" + nev + ", utesErosseg=" + utesErosseg + ", eronletiPont=" + eronletiPont + ", szerencse=" + szerencse + '}';
     }
-
     
+        
     //<editor-fold defaultstate="collapsed" desc="Getterek, Setterek">
     public String getNev() {
         return nev;
     }
     
-    public void setNev(String nev) {
+    protected void setNev(String nev) {
         this.nev = nev;
     }
     
@@ -43,7 +39,7 @@ public class Bokszolo {
         return utesErosseg;
     }
     
-    public void setUtesErosseg() {
+    protected void setUtesErosseg() {
         int ero = RANDOM.nextInt(10)+1;
         this.utesErosseg = ero;
     }
@@ -58,18 +54,11 @@ public class Bokszolo {
         this.eronletiPont = eronletiPont;
     }
     
-    public int getUtesekSzama() {
-        return utesekSzama;
-    }
-    
-    public void setUtesekSzama(int utesekSzama) {
-        this.utesekSzama = utesekSzama;
-    }
     public int getSzerencse() {
         return szerencse;
     }
 
-    public void setSzerencse() {
+    protected void setSzerencse() {
         int esely = RANDOM.nextInt(1000);
         this.szerencse = esely; 
     } 
@@ -77,7 +66,7 @@ public class Bokszolo {
     
 //</editor-fold>
 
-    public int utesEro(){
+    private int utesEro(){
         int ero;
         return ero = RANDOM.nextInt(11)+1;
     }
