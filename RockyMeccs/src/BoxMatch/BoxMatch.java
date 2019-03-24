@@ -6,7 +6,6 @@
 package BoxMatch;
 
 import boxer.Boxer;
-import boxer.Iboxer;
 import java.util.Random;
 
 /**
@@ -16,28 +15,14 @@ import java.util.Random;
 public class BoxMatch {
 
     private int threadCounter = 1;
-    private int firstPunch;
-    boolean gameOver = false;
-    Boxer[] boxerList = new Boxer[2];
+    private boolean gameOver = false;
+    private Boxer[] boxerList = new Boxer[2];
     Random rd = new Random();
     private StringBuilder sb;
 
     public BoxMatch(Boxer boxer1, Boxer boxer2) {
         boxerList[0] = boxer1;
         boxerList[1] = boxer2;
-
-    }
-
-    public int getFirstPunch() {
-        return firstPunch = rd.nextInt(2);
-    }
-
-    public Iboxer[] getBoxerList() {
-        return boxerList;
-    }
-
-    public int getThreadCounter() {
-        return threadCounter;
     }
 
     public boolean isGameOver() {
@@ -74,7 +59,7 @@ public class BoxMatch {
         while (!gameOver) {
 
             int counterPunch = 0;
-            int first = getFirstPunch();
+            int first = rd.nextInt(2);
             while (counterPunch < 2) {
                 switch (first) {
                     case 0:
@@ -88,7 +73,6 @@ public class BoxMatch {
                         first--;
                 }
             }
-
             printBoxerList();
             threadCounter++;
         }

@@ -15,7 +15,6 @@ public class TheMatch {
         Boxer boxer2 = new Boxer();
         BoxMatch Match = new BoxMatch(boxer1, boxer2);
         
-        Match.printBoxerList();
         Match.boxThread();
     }
 }
