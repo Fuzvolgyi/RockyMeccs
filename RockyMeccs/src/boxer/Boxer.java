@@ -11,18 +11,18 @@ import java.util.Random;
  *
  * @author FZs
  */
-public class Boxer {
+public abstract class Boxer implements IBoxer{
 
-    String name = "Boxer";
+    private String name;
     private int strength = 100;
     private int punchPower;
     private StringBuilder sb;
-    Random rd = new Random();
+    protected static Random rd = new Random();
 
-    public Boxer() {
-        this.sb = new StringBuilder();
+    static{
+        rd = new Random();
     }
-
+    
     //<editor-fold defaultstate="collapsed" desc="Getter-Setter">
     public String getName() {
         return name;
@@ -32,10 +32,6 @@ public class Boxer {
         return strength;
     }
 
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
-
     public int getPunchPower() {
         return punchPower;
     }
@@ -43,23 +39,48 @@ public class Boxer {
     public void setPunchPower(int punchPower) {
         this.punchPower = punchPower;
     }
-    
-//</editor-fold>
-    
-    public void addSb(String str) {
-        this.sb.append(str);
+
+    public void setName(String name) {
+        this.name = name;
     }
 
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+    
+    
+    
+//</editor-fold>
+
+    @Override
     public void getaBlow(int punchPower) {
         this.strength = strength - punchPower;
     }
 
+    @Override
     public void punch() {
-        setPunchPower(rd.nextInt(10) + 1);
+        int str = rd.nextInt(10) + 1;
+        str += extraPunch(str);
+        setPunchPower(str);
+        printPunchType(str);
     }
 
-    public void extraPunch() {
+    
 
+    
+
+    private void printPunchType(int strength) {
+        sb = new StringBuilder();
+        sb.append(this.getName());
+        if (strength % 2 == 0) {
+            sb.append(" bal horgot vitt be.");
+        }else{
+            sb.append(" job egyenessel támadott.");
+        }
+        System.out.println(sb);
     }
 
+    
+    
+    
 }

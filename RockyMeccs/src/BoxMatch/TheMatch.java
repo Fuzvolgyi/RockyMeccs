@@ -1,7 +1,9 @@
 
 package BoxMatch;
 
+import boxer.Ken;
 import boxer.Boxer;
+import boxer.Rocky;
 
 /**
  *
@@ -11,10 +13,10 @@ public class TheMatch {
     
     public static void main(String[] args) {
         
-        Boxer boxer1 = new Boxer();
-        Boxer boxer2 = new Boxer();
+        Boxer boxer1 = new Rocky();
+        Boxer boxer2 = new Ken();
         BoxMatch Match = new BoxMatch(boxer1, boxer2);
         
-        Match.boxThread();
+        Match.boxRound();
     }
 }
