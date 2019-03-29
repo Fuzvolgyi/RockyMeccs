@@ -11,7 +11,7 @@ import java.util.Random;
  *
  * @author FZs
  */
-public abstract class Boxer implements IBoxer{
+public abstract class Boxer {
 
     private String name;
     private int strength = 100;
@@ -19,10 +19,10 @@ public abstract class Boxer implements IBoxer{
     private StringBuilder sb;
     protected static Random rd = new Random();
 
-    static{
+    static {
         rd = new Random();
     }
-    
+
     //<editor-fold defaultstate="collapsed" desc="Getter-Setter">
     public String getName() {
         return name;
@@ -47,17 +47,12 @@ public abstract class Boxer implements IBoxer{
     public void setStrength(int strength) {
         this.strength = strength;
     }
-    
-    
-    
-//</editor-fold>
 
-    @Override
+//</editor-fold>
     public void getaBlow(int punchPower) {
         this.strength = strength - punchPower;
     }
 
-    @Override
     public void punch() {
         int str = rd.nextInt(10) + 1;
         str += extraPunch(str);
@@ -65,22 +60,19 @@ public abstract class Boxer implements IBoxer{
         printPunchType(str);
     }
 
-    
-
-    
+    public int extraPunch(int str) {
+        return 0;
+    }
 
     private void printPunchType(int strength) {
         sb = new StringBuilder();
         sb.append(this.getName());
         if (strength % 2 == 0) {
             sb.append(" bal horgot vitt be.");
-        }else{
+        } else {
             sb.append(" job egyenessel támadott.");
         }
         System.out.println(sb);
     }
 
-    
-    
-    
 }

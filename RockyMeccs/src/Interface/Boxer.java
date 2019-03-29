@@ -3,18 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package boxer;
+package Interface;
 
 /**
  *
  * @author FZs
  */
-interface IBoxer {
+interface Boxer {
 
-    public void punch();
-
-    public void getaBlow(int punchPower);
-
-    public int extraPunch(int str);
+    public void create();
+    
 
 }
