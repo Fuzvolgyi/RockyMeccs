@@ -11,7 +11,6 @@ package Interface;
  * @author FZs
  */
 public enum BoxerType {
-    BOXER,
     KEN,
     ROCKY
 }

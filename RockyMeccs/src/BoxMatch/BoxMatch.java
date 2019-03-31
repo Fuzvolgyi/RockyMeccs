@@ -11,13 +11,13 @@ public class BoxMatch {
 
     private int threadCounter = 1;
     private boolean gameOver = false;
-    private Boxer[] boxerList = new Boxer[2];
+    private final Boxer[] BOXERLIST = new Boxer[2];
     Random rd = new Random();
     private StringBuilder sb;
 
     public BoxMatch(Boxer boxer1, Boxer boxer2) {
-        boxerList[0] = boxer1;
-        boxerList[1] = boxer2;
+        BOXERLIST[0] = boxer1;
+        BOXERLIST[1] = boxer2;
     }
 
     void boxRound() {
@@ -55,30 +55,30 @@ public class BoxMatch {
         }
         if (!gameOver) {
 
-            boxerList[first].punch();
-            boxerList[first - i].getaBlow(boxerList[first].getPunchPower());
+            BOXERLIST[first].punch();
+            BOXERLIST[first - i].getaBlow(BOXERLIST[first].getPunchPower());
             koTest(first - i);
         }
     }
 
     private void koTest(int i) {
-        if (boxerList[i].getStrength() < 1) {
+        if (BOXERLIST[i].getStrength() < 1) {
             gameOver = true;
-            System.out.println(boxerList[i].getName() + " kiesett!!!");
+            System.out.println(BOXERLIST[i].getName() + " kiesett!!!");
         }
     }
 
     void printBoxerList() {
         sb = new StringBuilder();
-        for (int i = 0; i < boxerList.length; i++) {
+        for (int i = 0; i < BOXERLIST.length; i++) {
             sb.append(threadCounter)
                     .append(". menetben ")
-                    .append(boxerList[i].getName())
+                    .append(BOXERLIST[i].getName())
                     .append(" ")
                     .append("erőnléte ")
-                    .append(boxerList[i].getStrength())
+                    .append(BOXERLIST[i].getStrength())
                     .append(" utéserő ")
-                    .append(boxerList[i].getPunchPower())
+                    .append(BOXERLIST[i].getPunchPower())
                     .append(System.lineSeparator());
         }
         System.out.println(sb);

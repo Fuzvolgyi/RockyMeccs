@@ -2,10 +2,8 @@
 package BoxMatch;
 
 import Interface.BoxerType;
-import boxer.Ken;
 import boxer.Boxer;
 import boxer.BoxerFactory;
-import boxer.Rocky;
 
 /**
  *

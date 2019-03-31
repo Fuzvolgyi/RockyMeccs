@@ -16,8 +16,6 @@ public class BoxerFactory {
 
     public Boxer getBoxer(BoxerType boxerType){
         switch (boxerType){
-            case BOXER:
-                return new Boxer() {};
             case KEN:
                 return new Ken();
             case ROCKY:
