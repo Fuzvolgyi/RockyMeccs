@@ -16,6 +16,7 @@ public abstract class Boxer {
     private String name;
     private int strength = 100;
     private int punchPower;
+    protected int extraPunchCounter = 0;
     private StringBuilder sb;
     protected static Random rd = new Random();
 
@@ -48,6 +49,10 @@ public abstract class Boxer {
         this.strength = strength;
     }
 
+    public int getExtraPunchCounter() {
+        return extraPunchCounter;
+    }
+
 //</editor-fold>
     public void getaBlow(int punchPower) {
         this.strength = strength - punchPower;
@@ -60,7 +65,7 @@ public abstract class Boxer {
         printPunchType(str);
     }
 
-    public int extraPunch(int str) {
+    int extraPunch(int str) {
         return 0;
     }
 

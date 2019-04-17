@@ -7,14 +7,38 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.BoxMatchFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.BoxMatchFXMLController">
    <children>
       <SplitPane id="mainPane" fx:id="mainPane" dividerPositions="0.5" layoutX="189.0" layoutY="47.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <SplitPane dividerPositions="0.5" layoutX="199.0" layoutY="14.0" prefHeight="196.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Label id="labelThreadCounter" fx:id="labelThreadCounter" alignment="CENTER" layoutX="162.0" layoutY="46.0" prefHeight="17.0" prefWidth="126.0" />
+                  <Button id="buttonGo" fx:id="buttonGo" alignment="CENTER" contentDisplay="CENTER" layoutX="148.0" layoutY="154.0" mnemonicParsing="false" onAction="#ButtonGo" text="Induljon a mecs!" textFill="#c30303">
+                     <font>
+                        <Font name="Verdana Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <TextArea id="textAreaMain" fx:id="textAreaMain" disable="true" layoutX="108.0" layoutY="65.0" prefHeight="84.0" prefWidth="234.0" style="-fx-opacity: 1;" />
+                  <Label layoutX="162.0" layoutY="14.0" text="Boxmecs">
+                     <font>
+                        <Font name="Verdana Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Button id="buttonExit" fx:id="buttonExit" alignment="CENTER" contentDisplay="CENTER" layoutX="355.0" layoutY="154.0" mnemonicParsing="false" onAction="#buttonExit" text="Kilép" visible="false">
+                     <font>
+                        <Font name="Verdana Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button id="buttonNewMatch" fx:id="buttonNewMatch" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="154.0" mnemonicParsing="false" onAction="#ButtonNewMatch" text="Új mecs" visible="false">
+                     <font>
+                        <Font name="Verdana Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.5011185682326622" prefHeight="196.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
                       <AnchorPane id="redCorner" fx:id="redCorner" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
@@ -22,14 +46,15 @@
                                  <font>
                                     <Font name="Verdana Bold" size="14.0" />
                                  </font></Label>
-                              <VBox layoutX="24.0" layoutY="41.0" prefHeight="159.0" prefWidth="244.0">
+                              <VBox layoutX="24.0" layoutY="41.0" prefHeight="159.0" prefWidth="168.0">
                                  <children>
                                     <Label text="Név" />
-                                    <TextField id="tfRedName" fx:id="tfRedName" />
+                                    <TextField id="tfRedName" fx:id="tfRedName" disable="true" style="-fx-opacity: 1;">
+                                       </TextField>
                                     <Label text="Életerő" />
-                                    <TextField id="tfRedStrength" fx:id="tfRedStrength" prefHeight="25.0" prefWidth="114.0" />
+                                    <TextField id="tfRedStrength" fx:id="tfRedStrength" disable="true" prefHeight="25.0" prefWidth="114.0" style="-fx-opacity: 1;" />
                                     <Label text="Ütéserő" />
-                                    <TextField id="tfRedPunchPower" fx:id="tfRedPunchPower" />
+                                    <TextField id="tfRedPunchPower" fx:id="tfRedPunchPower" disable="true" style="-fx-opacity: 1;" />
                                  </children>
                               </VBox>
                            </children></AnchorPane>
@@ -40,14 +65,14 @@
                                     <Font name="Verdana Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <VBox layoutX="27.0" layoutY="44.0" prefHeight="150.0" prefWidth="244.0">
+                              <VBox layoutX="27.0" layoutY="44.0" prefHeight="150.0" prefWidth="168.0">
                                  <children>
                                     <Label text="Név" />
-                                    <TextField id="tfBlueName" fx:id="tfBlueName" />
+                                    <TextField id="tfBlueName" fx:id="tfBlueName" disable="true" style="-fx-opacity: 1;" />
                                     <Label text="Életerő" />
-                                    <TextField id="tfBlueStrength" fx:id="tfBlueStrength" prefHeight="25.0" prefWidth="114.0" />
+                                    <TextField id="tfBlueStrength" fx:id="tfBlueStrength" disable="true" prefHeight="25.0" prefWidth="187.0" style="-fx-opacity: 1;" />
                                     <Label text="Ütéserő" />
-                                    <TextField id="tfBluePunchPower" fx:id="tfBluePunchPower" />
+                                    <TextField id="tfBluePunchPower" fx:id="tfBluePunchPower" disable="true" style="-fx-opacity: 1;" />
                                  </children>
                               </VBox>
                            </children></AnchorPane>
@@ -59,12 +84,17 @@
       </SplitPane>
       <Pane id="menu" fx:id="menu" layoutX="25.0" layoutY="49.0" prefHeight="400.0" prefWidth="600.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="240.0" layoutY="86.0" prefHeight="18.0" prefWidth="120.0" text="Válasz boxolókat">
+            <Label layoutX="163.0" layoutY="15.0" text="Boxmecs">
+               <font>
+                  <Font name="Verdana Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="166.0" layoutY="86.0" prefHeight="18.0" prefWidth="120.0" text="Válasz boxolókat">
                <font>
                   <Font name="Verdana" size="14.0" />
                </font>
             </Label>
-            <VBox layoutX="250.0" layoutY="122.0" prefHeight="102.0" prefWidth="100.0" spacing="15.0">
+            <VBox layoutX="176.0" layoutY="127.0" prefHeight="102.0" prefWidth="100.0" spacing="15.0">
                <children>
                   <CheckBox id="checkBoxRocky" fx:id="checkBoxRocky" mnemonicParsing="false" prefHeight="17.0" prefWidth="99.0" text="Rocky">
                      <font>
@@ -83,16 +113,11 @@
                   </CheckBox>
                </children>
             </VBox>
-            <Button id="btStartTheMatch" fx:id="btStartTheMatch" layoutX="248.0" layoutY="308.0" mnemonicParsing="false" onAction="#btStartTheMatch" text="Induljon a mecs!" />
-            <Label id="labelAlert" fx:id="labelAlert" alignment="CENTER" contentDisplay="CENTER" layoutX="96.0" layoutY="251.0" prefHeight="17.0" prefWidth="410.0" textFill="#b20202">
+            <Button id="btStartTheMatch" fx:id="btStartTheMatch" layoutX="171.0" layoutY="308.0" mnemonicParsing="false" onAction="#btStartTheMatch" text="Boxolók a ringbe!" />
+            <Label id="labelAlert" fx:id="labelAlert" alignment="CENTER" contentDisplay="CENTER" layoutX="44.0" layoutY="250.0" prefHeight="23.0" prefWidth="362.0" textFill="#b20202">
                <font>
                   <Font name="Verdana" size="18.0" />
                </font></Label>
          </children></Pane>
-      <Label layoutX="232.0" layoutY="18.0" text="Boxmecs">
-         <font>
-            <Font name="Verdana Bold" size="25.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

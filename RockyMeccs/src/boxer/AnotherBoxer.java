@@ -13,7 +13,7 @@ package boxer;
 public class AnotherBoxer extends Boxer{
 
     public AnotherBoxer() {
-      
+        this.setName("Boxer");
     }
     
     

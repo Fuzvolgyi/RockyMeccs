@@ -34,18 +34,4 @@ public class TheMatch extends Application{
         launch(args);
     } 
     }
- 
-    
-    
-    
-//    public static void main(String[] args) {
-//        BoxerFactory boxerFactory = new BoxerFactory();
-//        
-//        Boxer boxer1 = boxerFactory.getBoxer(BoxerType.KEN);
-//        Boxer boxer2 = boxerFactory.getBoxer(BoxerType.ROCKY);
-//        
-//        BoxMatch Match = new BoxMatch(boxer1, boxer2);
-//        
-//        Match.boxRound();
-//    }
 

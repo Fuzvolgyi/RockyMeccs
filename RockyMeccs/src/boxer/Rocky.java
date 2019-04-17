@@ -12,8 +12,6 @@ package boxer;
  */
 public class Rocky extends Boxer{
 
-    private int extraPunchCounter = 0;
-    
     public Rocky() {
         super.setName("Rocky");
         }

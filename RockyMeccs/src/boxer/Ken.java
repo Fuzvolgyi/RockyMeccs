@@ -13,12 +13,11 @@ package boxer;
  */
 public class Ken extends Boxer {
     
-    private int extraPunchCounter = 0;
 
     public Ken() {
         this.setName("Ken");
     }
-
+    
     @Override
     public int extraPunch(int str) {
         if (str < 5 && rd.nextInt(100)+1 <= 20 ) {
