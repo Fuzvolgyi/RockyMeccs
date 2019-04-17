@@ -4,14 +4,17 @@
  * and open the template in the editor.
  */
 
-package Interface;
+package boxer;
 
 /**
  *
  * @author FZs
  */
-public enum BoxerType {
-    KEN,
-    ROCKY,
-    BOXER
+public class AnotherBoxer extends Boxer{
+
+    public AnotherBoxer() {
+      
+    }
+    
+    
 }

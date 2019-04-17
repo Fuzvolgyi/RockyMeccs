@@ -20,6 +20,8 @@ public class BoxerFactory {
                 return new Ken();
             case ROCKY:
                 return new Rocky();
+            case BOXER:
+                return new AnotherBoxer();    
             default:
                 return null;
         }
