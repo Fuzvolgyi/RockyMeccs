@@ -142,30 +142,30 @@ public class BoxMatchFXMLController implements Initializable {
     }
 
     private void showBoxersState() {
+        showTextfields(boxer1, tfRedName, tfRedStrength, tfRedPunchPower);
+        showTextfields(boxer2, tfBlueName, tfBlueStrength, tfBluePunchPower);
+    }
 
-        tfRedName.setText(boxer1.getName());
-        tfRedStrength.setText(String.valueOf(boxer1.getStrength()));
-        if (boxer1.getPunchPower() < 1) {
-            tfRedPunchPower.setText("");
+    private void showTextfields(Boxer boxer, TextField tfName, TextField tfStrength, TextField tfPunchPower) {
+        tfName.setText(boxer.getName());
+        if (boxer.getStrength() < 1) {
+            tfStrength.setText("KO");
         } else {
-            tfRedPunchPower.setText(String.valueOf(boxer1.getPunchPower()));
+            tfStrength.setText(String.valueOf(boxer.getStrength()));
         }
-
-        tfBlueName.setText(boxer2.getName());
-        tfBlueStrength.setText(String.valueOf(boxer2.getStrength()));
-        if (boxer2.getPunchPower() < 1) {
-            tfBluePunchPower.setText("");
+        if (boxer.getPunchPower() < 1) {
+            tfPunchPower.setText("");
         } else {
-            tfBluePunchPower.setText(String.valueOf(boxer2.getPunchPower()));
+            tfPunchPower.setText(String.valueOf(boxer.getPunchPower()));
         }
     }
 
     private void showMediation() {
-        
+
         printPunchType(boxer1);
         sb.append(System.lineSeparator());
         printPunchType(boxer2);
-        
+
         textAreaMain.setText(sb.toString());
 
     }
@@ -198,6 +198,7 @@ public class BoxMatchFXMLController implements Initializable {
             labelThreadCounter.setText("Vége a mérkőzésnek!");
             buttonExit.setVisible(true);
             buttonNewMatch.setVisible(true);
+            textAreaMain.setText("A győztes.... " + boxMatch.winner());
         }
 
     }
@@ -206,25 +207,26 @@ public class BoxMatchFXMLController implements Initializable {
         String used = " használta a különleges képességét!";
         if (boxer1PounchCounter != boxer1.getExtraPunchCounter()) {
             sb.append(boxer1.getName())
-                .append(used)
-                .append(System.lineSeparator());
+                    .append(used)
+                    .append(System.lineSeparator());
         }
         if (boxer2PounchCounter != boxer2.getExtraPunchCounter()) {
             sb.append(boxer2.getName())
-                .append(used)
-                .append(System.lineSeparator());
+                    .append(used)
+                    .append(System.lineSeparator());
         }
     }
-    
+
     @FXML
-    private void buttonExit(ActionEvent event){
+    private void buttonExit(ActionEvent event) {
         System.exit(0);
     }
-    
+
     @FXML
-    private void ButtonNewMatch(ActionEvent event){
+    private void ButtonNewMatch(ActionEvent event) {
         boxerTypeList.clear();
         mainPane.setVisible(false);
         menu.setVisible(true);
     }
+
 }

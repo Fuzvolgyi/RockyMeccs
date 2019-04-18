@@ -1,9 +1,6 @@
 
 package view;
 
-import Interface.BoxerType;
-import boxer.Boxer;
-import boxer.BoxerFactory;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,12 +16,9 @@ public class TheMatch extends Application{
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("BoxMatchFXML.fxml"));
-        
         Scene scene = new Scene(root);
-        
         stage.setTitle("Boxmecs");
         stage.setResizable(false);
-        
         stage.setScene(scene);
         stage.show();
         

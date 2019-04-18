@@ -62,22 +62,10 @@ public abstract class Boxer {
         int str = rd.nextInt(10) + 1;
         str += extraPunch(str);
         setPunchPower(str);
-        printPunchType(str);
     }
 
     int extraPunch(int str) {
         return 0;
-    }
-
-    private void printPunchType(int strength) {
-        sb = new StringBuilder();
-        sb.append(this.getName());
-        if (strength % 2 == 0) {
-            sb.append(" bal horgot vitt be.");
-        } else {
-            sb.append(" job egyenessel támadott.");
-        }
-        System.out.println(sb);
     }
 
 }

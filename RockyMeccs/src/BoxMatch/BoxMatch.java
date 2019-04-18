@@ -22,10 +22,16 @@ public class BoxMatch {
         return gameOver;
     }
 
+    public Boxer[] getBOXERLIST() {
+        return BOXERLIST;
+    }
+
     
     
     public void boxRound() {
-
+        for (int i = 0; i < BOXERLIST.length; i++) {
+            koTest(i);
+        }
         if (!gameOver) {
             int counterPunch = 0;
             int first = rd.nextInt(2);
@@ -40,6 +46,7 @@ public class BoxMatch {
                         fight(1);
                         counterPunch++;
                         first--;
+                        break;
                 }
             }
         }
@@ -60,9 +67,13 @@ public class BoxMatch {
         }
     }
 
-    private void koTest(int i) {
+    private void koTest(int i) { 
         if (BOXERLIST[i].getStrength() < 1) {
             gameOver = true;
         }
+    }
+    
+    public String winner(){
+        return BOXERLIST[0].getStrength() < 1 ? BOXERLIST[1].getName() : BOXERLIST[0].getName();
     }
 }

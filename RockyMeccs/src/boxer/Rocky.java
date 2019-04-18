@@ -22,7 +22,6 @@ public class Rocky extends Boxer{
                 && rd.nextInt(100)+1 <= 30) {
             this.setStrength(this.getStrength() + 20);
             extraPunchCounter++;
-            System.out.println("Rocky használta a különleges képességét!");
         }
         return 0;
     }
